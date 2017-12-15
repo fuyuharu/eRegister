@@ -10,4 +10,13 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">Incorrect password</string>
     <string name="error_field_required">This field is required</string>
+    <string name="loginUsername">Username</string>
+    <string name="loginPassword">Password</string>
+    <string name="drawerTimetable">Timetable</string>
+    <string name="drawerGrades">Grades</string>
+    <string name="drawerLogOut">Log out</string>
+    <string name="drawerSettings">Settings</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="userAreaText">Select a menu from the drawer</string>
 </resources>

@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.marcel.eRegister.UserAreaActivity"></activity>
+        <activity android:name="com.example.marcel.eRegister.UserAreaActivity"
+            android:theme="@style/Theme.AppCompat">
+        </activity>
     </application>
 
 </manifest>
