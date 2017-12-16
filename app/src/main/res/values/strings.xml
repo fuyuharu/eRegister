@@ -19,4 +19,11 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="userAreaText">Select a menu from the drawer</string>
+    <string-array name="spinner_list_item_array">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
 </resources>
