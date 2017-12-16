@@ -2,6 +2,7 @@ package com.example.marcel.eRegister;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -13,15 +14,28 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
+import android.view.Menu;
+import android.view.MenuItem;
+
 
 public class UserAreaActivity extends AppCompatActivity {
-    private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mToggle;
-    ActionBar actionBar;
-    private Spinner spinner;
-    private static final String[]paths = {"item 1", "item 2", "item 3"};
 
+    protected FrameLayout frameLayout;
+    protected ListView mDrawerList;
+    protected String[] listArray = { "Timetable", "Grades", "Settings", "Log out"};
+    DrawerLayout mDrawerLayout;
+    ActionBarDrawerToggle mToggle;
+    Spinner spinner;
+    ActionBar actionBar;
+    MenuItem menuItem;
 
 
     @Override
@@ -30,21 +44,18 @@ public class UserAreaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_area);
 
 
+        Window window = this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
 
-            Window window = this.getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#eb3349")));
 
-            actionBar = getSupportActionBar();
-            actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#eb3349")));
-
-            mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-            mToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.open,R.string.close);
-            mDrawerLayout.addDrawerListener(mToggle);
-            mToggle.syncState();
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
     }
 
     @Override
