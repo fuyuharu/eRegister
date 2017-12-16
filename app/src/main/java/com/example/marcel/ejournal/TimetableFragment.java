@@ -1,4 +1,4 @@
-package com.example.marcel.eRegister.fragments;
+package com.example.marcel.ejournal;
 
 import android.content.Context;
 import android.net.Uri;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.marcel.eRegister.R;
+
 
 /**
  * A simple {@link Fragment} subclass.

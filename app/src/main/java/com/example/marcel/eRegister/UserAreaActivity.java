@@ -21,18 +21,11 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.content.Intent;
-import android.support.v4.widget.DrawerLayout;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import com.example.marcel.eRegister.fragments.TimetableFragment;
+import com.example.marcel.ejournal.TimetableFragment;
 
 
-public class UserAreaActivity extends AppCompatActivity implements TimetableFragment.OnFragmentInteractionListener {
+public class UserAreaActivity extends AppCompatActivity implements TimetableFragment.OnFragmentInteractionListener{
 
     protected FrameLayout frameLayout;
     protected ListView mDrawerList;
@@ -76,8 +69,8 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                Fragment fagment;
-                FragmentTransaction transFag = getFragmentManager().beginTransaction();
+                Fragment fragment;
+                FragmentTransaction transFrag = getFragmentManager().beginTransaction();
 
                 switch (item.getItemId()) {
                     case R.id.nav_grades:
@@ -90,11 +83,10 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
 
                         break;
                     case R.id.nav_timetable:
-
-                        fagment = new TimetableFragment();
-                        transFag.replace(R.id.content_frame,fagment);
-                        transFag.addToBackStack(null);
-                        transFag.commit();
+                        fragment = new TimetableFragment();
+                        transFrag.replace(R.id.content_frame,fragment);
+                        transFrag.addToBackStack(null);
+                        transFrag.commit();
 
                         //ANNOTATION: This is how you would do it with an activity
                         //Intent i = new Intent(UserAreaActivity.this, TimetableActivity.class);
@@ -108,9 +100,9 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
                  * If you want to clean the code a bit later on, make sure that a fragment is created
                  * in the switch/case "default" statement, then take the code that is
                  *
-                 transFag.replace(R.id.content_frame,fagment);
-                 transFag.addToBackStack(null);
-                 transFag.commit();
+                 transFrag.replace(R.id.content_frame,fragment);
+                 transFrag.addToBackStack(null);
+                 transFrag.commit();
                  *
                  * out of the individual case and just work with the variables after the switch/case
                  * statement. The fragment creation is the only thing you'd need to handle in that.
@@ -119,6 +111,8 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
             }
         });
     }
+
+
 
 
     @Override
