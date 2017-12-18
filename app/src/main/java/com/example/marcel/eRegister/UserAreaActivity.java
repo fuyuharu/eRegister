@@ -1,10 +1,14 @@
 package com.example.marcel.eRegister;
 
+import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.provider.CalendarContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.MenuItemCompat;
@@ -21,6 +25,7 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toolbar;
 
 import com.example.marcel.ejournal.TimetableFragment;
 
@@ -35,13 +40,15 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
     Spinner spinner;
     ActionBar actionBar;
     MenuItem menuItem;
-
+    android.widget.Toolbar toolbar;
+    ActionBarDrawerToggle actionBarDrawerToggle;
+    ActivityManager.TaskDescription taskDescription;
+    String label = "eRegister";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_area);
-
 
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -51,13 +58,15 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
         actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#eb3349")));
 
-        mDrawerLayout = findViewById(R.id.drawer_layout);
-        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.drawerOpen,R.string.drawerClose);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        drawerSetUp();
     }
+
+
 
     /**ANNOTATION: This is the view that holds your drawer, the "menu" in that view contains
      * the drawer items. You set up a new listener for those items being selected and in that
@@ -112,30 +121,12 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
         });
     }
 
-
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mToggle.onOptionsItemSelected(item)) {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.actionbar_spinner, menu);
-
-        MenuItem item = menu.findItem(R.id.spinner);
-        Spinner spinner = (Spinner) MenuItemCompat.getActionView(item);
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.spinner_list_item_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinner.setAdapter(adapter);
-        return true;
     }
 
     @Override

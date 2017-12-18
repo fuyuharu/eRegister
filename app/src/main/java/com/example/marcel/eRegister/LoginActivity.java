@@ -1,6 +1,10 @@
 package com.example.marcel.eRegister;
 
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Intent;
+import android.graphics.drawable.Icon;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -52,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.trim().equals("statusmsg('<b>Hibás felhasználónév / jelszó</b>');")) {
                     Toast.makeText(LoginActivity.this, "Post Request Success", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(LoginActivity.this, UserAreaActivity.class));
+                    finish();
                 }else{
                     Toast.makeText(LoginActivity.this, "Post Request Faliure", Toast.LENGTH_SHORT).show();
                 }

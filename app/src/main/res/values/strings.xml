@@ -16,8 +16,8 @@
     <string name="drawerGrades">Grades</string>
     <string name="drawerLogOut">Log out</string>
     <string name="drawerSettings">Settings</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
+    <string name="drawerOpen">Open</string>
+    <string name="drawerClose">Close</string>
     <string name="userAreaText">Select a menu from the drawer</string>
     <string-array name="spinner_list_item_array">
         <item>Monday</item>

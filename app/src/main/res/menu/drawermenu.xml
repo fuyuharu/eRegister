@@ -4,12 +4,12 @@
     <item
         android:id="@+id/nav_timetable"
         android:title="@string/drawerTimetable"
-        android:icon="@drawable/ic_class_white_24px"/>
+        android:icon="@drawable/ic_schedule_white_24px"/>
 
     <item
         android:id="@+id/nav_grades"
         android:title="@string/drawerGrades"
-        android:icon="@drawable/ic_grade_white_24px"/>
+        android:icon="@drawable/ic_class_white_24px"/>
 
     <item
         android:id="@+id/nav_settings"
