@@ -22,7 +22,8 @@
         <activity
             android:name=".UserAreaActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat"></activity>
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
     </application>
 
 </manifest>

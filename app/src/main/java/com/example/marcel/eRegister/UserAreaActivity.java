@@ -26,6 +26,10 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
 import java.lang.reflect.Array;
 
 public class UserAreaActivity extends AppCompatActivity implements TimetableFragment.OnFragmentInteractionListener, GradesFragment.OnFragmentInteractionListener {
@@ -43,6 +47,7 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
     ActivityManager.TaskDescription taskDescription;
     String label = "eRegister";
     RecyclerView recyclerView;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +60,12 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
         Window window = this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimaryDark));
+
+        setTitle(getResources().getText(R.string.drawerTimetable));
 
         actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#eb3349")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#fafafa")));
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.closeDrawers();
@@ -88,6 +95,7 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
 
                         fragment = new TimetableFragment();
                         fragmentTransaction.replace(R.id.content_frame, fragment);
+                        setTitle(getResources().getText(R.string.drawerTimetable));
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                         mDrawerLayout.closeDrawers();
@@ -98,6 +106,7 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
 
                         fragment = new GradesFragment();
                         fragmentTransaction.replace(R.id.content_frame, fragment);
+                        setTitle(getResources().getText(R.string.drawerGrades));
                         fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                         mDrawerLayout.closeDrawers();

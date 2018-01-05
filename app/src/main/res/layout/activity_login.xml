@@ -8,6 +8,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:background="@color/colorLight"
     tools:context="com.example.marcel.eRegister.LoginActivity">
 
     <TextView
@@ -15,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="166dp"
         android:baselineAligned="false"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -27,9 +28,10 @@
         android:hint="@string/loginUsername"
         android:inputType="textPersonName"
         android:maxLength="7"
-        android:shadowColor="@color/colorWhite"
-        android:textColor="@color/colorWhite"
-        android:textColorHighlight="@color/colorWhite" />
+        android:shadowColor="@color/colorBlack"
+        android:textColor="@color/colorBlack"
+        android:textColorHighlight="@color/colorBlack"
+        android:backgroundTint="@color/colorBlack" />
 
     <EditText
         android:id="@+id/loginPassword"
@@ -38,9 +40,10 @@
         android:ems="10"
         android:hint="@string/loginPassword"
         android:inputType="textPassword"
-        android:shadowColor="@color/colorWhite"
-        android:textColor="@color/colorWhite"
-        android:textColorHighlight="@color/colorWhite" />
+        android:shadowColor="@color/colorBlack"
+        android:textColor="@color/colorBlack"
+        android:textColorHighlight="@color/colorBlack"
+        android:backgroundTint="@color/colorBlack" />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -50,7 +53,7 @@
         android:background="@android:color/transparent"
         android:elevation="24dp"
         android:text="@string/action_sign_in"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorBlack"
         android:textStyle="bold" />
 
 </LinearLayout>

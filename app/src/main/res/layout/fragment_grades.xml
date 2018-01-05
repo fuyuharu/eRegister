@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLight"
     tools:context=".TimetableFragment"
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
@@ -12,6 +13,7 @@
 
     <TextView
         android:id="@+id/textView5"
+        android:textColor="@color/colorBlack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Grades" />

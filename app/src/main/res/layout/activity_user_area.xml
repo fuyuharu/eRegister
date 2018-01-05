@@ -2,6 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
+    android:background="@color/colorLight"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,9 +14,12 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation"
+        android:background="@color/colorLight"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        app:itemIconTint="@color/colorBlack"
+        app:itemTextColor="@color/colorBlack"
         app:menu="@menu/drawermenu" />
 
 </android.support.v4.widget.DrawerLayout>
