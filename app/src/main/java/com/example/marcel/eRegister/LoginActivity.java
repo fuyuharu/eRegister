@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if (response.trim().equals("statusmsg('<b>Hibás felhasználónév / jelszó</b>');")) {
-                    Toast.makeText(LoginActivity.this, "Post Request Success", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(LoginActivity.this, "Post Request Success", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(LoginActivity.this, UserAreaActivity.class));
                     finish();
                 }else{

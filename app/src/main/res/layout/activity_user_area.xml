@@ -13,6 +13,7 @@
         android:layout_height="match_parent"/>
 
     <android.support.design.widget.NavigationView
+        app:headerLayout="@layout/header"
         android:id="@+id/navigation"
         android:background="@color/colorLight"
         android:layout_width="wrap_content"

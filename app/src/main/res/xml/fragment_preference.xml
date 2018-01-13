@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/preferenceLogin">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="check_box_preference_1"
+            android:title="@string/settingStayLoggedIn" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_preference_1"
+            android:title="@string/settingsFingerprint" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preferenceNotifications">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="switch_preference_1"
+            android:title="@string/drawerGrades" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preferenceAccount">
+
+        <ListPreference
+            android:title="@string/drawerLogOut"
+            android:key="downloadType"
+            android:defaultValue="1" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

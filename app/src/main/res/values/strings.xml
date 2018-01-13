@@ -2,14 +2,9 @@
     <string name="app_name">eRegister</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_username">Username</string>
-    <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
     <string name="action_sign_in_short">Password</string>
     <string name="error_invalid_username">Invalid username</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">Incorrect password</string>
-    <string name="error_field_required">This field is required</string>
     <string name="loginUsername">Username</string>
     <string name="loginPassword">Password</string>
     <string name="drawerTimetable">Timetable</string>
@@ -19,14 +14,13 @@
     <string name="drawerOpen">Open</string>
     <string name="drawerClose">Close</string>
     <string name="userAreaText">Select a menu from the drawer</string>
-    <string-array name="spinner_list_item_array">
-        <item>Monday</item>
-        <item>Tuesday</item>
-        <item>Wednesday</item>
-        <item>Thursday</item>
-        <item>Friday</item>
-    </string-array>
+    <string name="userName">username</string>
+    <string name="averageGrade">avg</string>
+    <string name="instructions">Place your fingertip on the Home button to verify your identity</string>
+    <string name="preferenceAccount">Account</string>
+    <string name="preferenceLogin">Login</string>
+    <string name="preferenceNotifications">Notifications</string>
+    <string name="settingStayLoggedIn">Stay Logged in</string>
+    <string name="settingsFingerprint">Login with fingerprint</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

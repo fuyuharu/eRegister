@@ -114,7 +114,11 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
                         break;
                     case R.id.nav_settings:
 
-
+                        fragment = new SettingsFragment();
+                        fragmentTransaction.replace(R.id.content_frame, fragment);
+                        setTitle(getResources().getText(R.string.drawerSettings));
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
                         mDrawerLayout.closeDrawers();
 
                         break;
