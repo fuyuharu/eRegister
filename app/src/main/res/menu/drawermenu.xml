@@ -5,21 +5,25 @@
     <item
         android:id="@+id/nav_timetable"
         android:title="@string/drawerTimetable"
-        android:icon="@drawable/ic_schedule_white_24px"/>
+        android:icon="@drawable/ic_schedule_white_24px"
+        android:tint="@color/colorWhite" />
 
     <item
         android:id="@+id/nav_grades"
         android:title="@string/drawerGrades"
-        android:icon="@drawable/ic_class_white_24px" />
+        android:icon="@drawable/ic_class_white_24px"
+        android:tint="@color/colorWhite" />
 
     <item
         android:id="@+id/nav_settings"
         android:title="@string/drawerSettings"
-        android:icon="@drawable/ic_settings_white_24px"/>
+        android:icon="@drawable/ic_settings_white_24px"
+        android:tint="@color/colorWhite" />
 
     <item
         android:id="@+id/nav_logout"
         android:icon="@drawable/ic_exit_to_app_white_24px"
-        android:title="@string/drawerLogOut" />
+        android:title="@string/drawerLogOut"
+        android:tint="@color/colorWhite" />
 
 </menu>

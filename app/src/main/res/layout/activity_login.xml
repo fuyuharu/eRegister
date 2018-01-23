@@ -8,7 +8,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    android:background="@color/colorLight"
+    android:background="@color/colorWhite"
     tools:context="com.example.marcel.eRegister.LoginActivity">
 
     <TextView

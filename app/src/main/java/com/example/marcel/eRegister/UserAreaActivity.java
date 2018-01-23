@@ -10,12 +10,15 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -64,8 +67,6 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
 
         setTitle(getResources().getText(R.string.drawerTimetable));
 
-        actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#fafafa")));
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerLayout.closeDrawers();
@@ -96,7 +97,6 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
                         fragment = new TimetableFragment();
                         fragmentTransaction.replace(R.id.content_frame, fragment);
                         setTitle(getResources().getText(R.string.drawerTimetable));
-                        fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                         mDrawerLayout.closeDrawers();
 
@@ -107,7 +107,6 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
                         fragment = new GradesFragment();
                         fragmentTransaction.replace(R.id.content_frame, fragment);
                         setTitle(getResources().getText(R.string.drawerGrades));
-                        fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                         mDrawerLayout.closeDrawers();
 
@@ -117,7 +116,6 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
                         fragment = new SettingsFragment();
                         fragmentTransaction.replace(R.id.content_frame, fragment);
                         setTitle(getResources().getText(R.string.drawerSettings));
-                        fragmentTransaction.addToBackStack(null);
                         fragmentTransaction.commit();
                         mDrawerLayout.closeDrawers();
 
@@ -161,4 +159,14 @@ public class UserAreaActivity extends AppCompatActivity implements TimetableFrag
     public void onFragmentInteraction(Uri uri) {
         //ANNOTATION: Here you activity can communicate with the fragment... I guess
     }
+
+    @Override
+    public void onBackPressed() {
+        if (this.mDrawerLayout.isDrawerVisible(GravityCompat.START)) {
+            this.mDrawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 }

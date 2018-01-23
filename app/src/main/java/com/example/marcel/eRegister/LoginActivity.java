@@ -1,16 +1,26 @@
 package com.example.marcel.eRegister;
 
+import android.animation.ValueAnimator;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Icon;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.databinding.DataBindingUtil;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -25,8 +35,9 @@ import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button buttonLogin;
-    EditText loginUsername, loginPassword;
+        Button buttonLogin;
+        FrameLayout frameLayout;
+        EditText loginUsername, loginPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +48,13 @@ public class LoginActivity extends AppCompatActivity {
         loginUsername = (EditText) findViewById(R.id.loginUsername);
         loginPassword = (EditText) findViewById(R.id.loginPassword);
 
+
+        if(!isConnected(LoginActivity.this)) buildDialog(LoginActivity.this).show();
+        else {
+
+            setContentView(R.layout.activity_login);
+        }
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +62,40 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    public boolean isConnected(Context context) {
+
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netinfo = cm.getActiveNetworkInfo();
+
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+            if((mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting())) return true;
+            else return false;
+        } else
+        return false;
+    }
+
+    public AlertDialog.Builder buildDialog(Context c) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(c);
+        builder.setTitle("No Internet Connection");
+        builder.setMessage("There's no internet connection. Make sure you have WiFi or Mobile Data turned on");
+
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                
+            }
+        });
+
+        return builder;
+    }
+
 
     private void Login() {
 
